@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>fizinio aktyvūmo stebėjimas</title>
+	<link rel="stylesheet" href="main.css">
+	<style>
+	
+	</style>
+<body>
+	<h3>Atliktų apklausų duomenys</h3>	
+	<a th:href="@{${url_statistika}}">Statistinė suvestinė</a>
+	<table>
+		<tr>
+			<th colspan="2">
+				apie
+				<br>apklaustąjį
+			</th>
+			<th colspan="4">
+				būklė prieš
+			</th>
+			<th colspan="10">
+				periodo duomenys
+			</th>
+			<th colspan="4">
+				būklė po
+			</th>
+		</tr>
+		<tr>
+			<th>
+			  lytis
+			</th>
+			<th>
+				amžius
+				<br>periodo
+				<br>pabaigoje
+			</th>	
+			</th>
+			<th>
+				kritinės
+				<br>ligos			
+			</th>
+			<th>
+				chroniški
+				<br>negalavimai
+			</th>
+			<th>
+				nubėgamas
+				<br>atstumas
+				<br>per
+				<br>12min
+			<br>
+			</th>
+			<th>
+				prisitraukimai			
+			</th>
+			<th>
+				periodas
+				<br>men
+			</th>
+			<th>
+				pagr_veikla
+			</th>
+			<th>
+				neintensyvios
+				<br>veiklos
+				<br>rusys
+			</th>
+			<th>
+				val.
+				<br>per.
+				<br>sav.
+				<br>neintensyviai
+			</th>
+			<th> 
+				kartai
+				<br>per
+				<br>sav.
+				<br>neintensyviai
+			<th>
+			<th>
+				intensyvios_veiklos_rusys
+			</th>
+			<th>
+				val
+				<br>per
+				<br>sav.
+				<br>intensyviai
+			<th>
+			<th>
+				kartai
+				<br>per
+				<br>sav.
+				<br>intensyviai
+			</th>
+			<th>
+				pastabos
+			</th>
+			<th>
+				kritines
+				<br>ligos
+			</th>
+			<th>
+				chroniški
+				<br>negalavimai
+			</th>
+			<th>	
+				nubėgamas
+				<br>atstumas
+				<br>per
+				<br>12min
+			</th>
+			<th>
+				prisitraukimai
+			</th>
+		</tr>
+		<tr th:each="apklausa1 : ${apklausos_visos}">
+			<td th:text="${apklausa1.getLytis()}"></td>
+			<td th:text="${apklausa1.getAmzius_periodo_pabaigoje()}"></td>
+		</tr>
+	</table>
+</body>
+</html>

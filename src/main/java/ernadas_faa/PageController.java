@@ -1,7 +1,10 @@
 package ernadas_faa;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,6 +47,8 @@ public class PageController {
 			
 			) {
 		
+		String url_tpl = "apklausa";
+		
 		if ( ( saugoti != null ) && saugoti.equals ("saugoti") ) {
 			
 			Apklausa apklausa = new Apklausa ( 
@@ -74,8 +79,22 @@ public class PageController {
 					, Integer.parseInt (  prisitraukimai_po)
 				);
 			apklausa_repository.save(apklausa);
+			url_tpl = "redirect:apklausos"; 
 		}
 		
-		return "apklausa";
+		return url_tpl;
+	}
+	
+	@RequestMapping(path="/apklausos", method={ RequestMethod.GET, RequestMethod.POST })
+	public String apklausos ( Model model ) {
+		
+		String url_statistika = "statistika";
+		
+		Iterable<Apklausa> apklausos_visos = apklausa_repository.findAll();
+		
+		model.addAttribute ( "url_statistika", url_statistika );
+		model.addAttribute ( "apklausos_visos", apklausos_visos );
+		
+		return "apklausos";
 	}
 }
