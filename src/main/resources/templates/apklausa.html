@@ -3,42 +3,114 @@
 <head>
 	<meta charset="utf-8">
 	<title>fizinio aktyvūmo stebėjimas</title>
+	<style>
+		.data_form {
+			width: 90%;
+			margin: 12px auto;
+			padding: 12px;
+			border: 1px solid grey;
+		}
+		.data_form input, .data_form label {
+			width: 97%;
+			margin: 17px 7px;
+			padding: 7px;
+		}
+		.data_form input {
+		
+			margin-top: 7px;
+		}
+		.data_form label {
+		
+			margin-bottom: 7px;
+		}
+		.skyrius {
+		
+			text-align: center;
+			width: 97%;
+			margin: 17px 7px 4px 7px;
+			padding: 7px;
+			background-color: lightgreen;
+			border-bottom: 1px solid green;			
+		}
+		h3 {
+			text-align: center;
+		}
+		hr {
+		
+			width: 70%;
+			margin: 3px auto;
+		}
+	</style>
 </head>
 <body>
 	<h3>fizinio aktyvūmo stebėjimas</h3>
 	<form action="" method="POST">
-		<label for="lytis">lytis</label>
-		<input type="text" name="lytis" value="V">
-		<label for="amzius_periodo_pabaigoje">amzius periodo pabaigoje</label>
-		<input type="text" name="amzius_periodo_pabaigoje" value="40">
-		kritines_ligos_pries	
-		<input type="text" name="kritines_ligos" value="">
-		chroniski_negalavimai_pries 
-		<input type="text" name="chroniski_negalavimai" value="">
-		nubegamas_atstumas_per_12min_pries nubegamas_atstumas_per_12min_pries 	
-		<input type="text" name="nubegamas_atstumas_per_12min" value="2">
-		prisitraukimai_pries prisitraukimai pries
-		<input type="text" name="prisitraukimai" value="4"> 			
+		<div class="data_form">
+			<label for="lytis">lytis</label>
+			<input type="text" name="lytis" value="V">
 			
-			, <input type="text" name="periodas_men" value="periodas"> periodas_men
-			, <input type="text" name="pagr_veikla" value="namu_seimininke"> pagr_veikla
+			<label for="amzius_periodo_pabaigoje">amžius periodo pabaigoje</label>
+			<input type="text" name="amzius_periodo_pabaigoje" value="40">
 			
-			, <input type="text" name="neintensyvios_veiklos_rusys" value=""> neintensyvios_veiklos_rusys
-			, <input type="text" name="val_per_sav_neintensyviai" value="0.0"> val_per_sav_neintensyviai
-			, <input type="text" name="kartai_per_sav_neintensyviai" value="0.0"> kartai_per_sav_neintensyviai
+			<div class="skyrius">būklė prieš</div>
 			
-			, <input type="text" name="intensyvios_veiklos_rusys" value=""> intensyvios_veiklos_rusys
-			, <input type="text" name="val_per_sav_intensyviai" value="0.0"> val_per_sav_intensyviai
-			, <input type="text" name="kartai_per_sav_intensyviai" value="0.0"> kartai_per_sav_intensyviai
+			<label for="kritines_ligos_pries">kritinės ligos</label>	
+			<input type="text" name="kritines_ligos_pries" value="">
 			
-			, <input type="text" name="pastabos" value="0.0"> pastabos
+			<label for="chroniski_negalavimai_pries">chroniški negalavimai</label> 
+			<input type="text" name="chroniski_negalavimai_pries" value="">
 			
-			, <input type="text" name="kritines_ligos" value=""> kritines_ligos_po
-			, <input type="text" name="chroniski_negalavimai" value=""> chroniski_negalavimai_po	
-			, <input type="text" name="nubegamas_atstumas_per_12min" value="2"> nubegamas_atstumas_per_12min_po
-			, <input type="text" name="prisitraukimai" value="4"> prisitraukimai_po
+			<label for="nubegamas_atstumas_per_12min_pries">nubėgamas atstumas per 12min</label>	
+			<input type="text" name="nubegamas_atstumas_per_12min_pries" value="2">
 			
-			, <input type="text" name="saugoti" value="nesaugoti"> saugoti
+			<label for="prisitraukimai_pries">prisitraukimai_pries prisitraukimai pries</label>
+			<input type="text" name="prisitraukimai_pries" value="4">
+			
+			<div class="skyrius">periodo duomenys</div>		
+			 			
+			<label for="periodas_men">trukmė mėnesiais</label>
+			<input type="text" name="periodas_men" value="10">
+			
+			<label for="pagr_veikla">pagr_veikla</label>
+			<input type="text" name="pagr_veikla" value="namų šeimininkė"> 
+			
+			<label for="neintensyvios_veiklos_rusys">neintensyvios veiklos rūšys</label>
+			<input type="text" name="neintensyvios_veiklos_rusys" value="ėjimas,namų ruoša">
+			
+			<label for="val_per_sav_neintensyviai"> trukmė val. per sav. neintensyvios veiklos</label>
+			<input type="text" name="val_per_sav_neintensyviai" value="10.0"> 
+			
+			<label for="kartai_per_sav_neintensyviai"> kartai per sav. neintensyvios veiklos</label>
+			<input type="text" name="kartai_per_sav_neintensyviai" value="6"> 
+			
+			<label for="intensyvios_veiklos_rusys"> intensyvios veiklos rūšys</label>	
+			<input type="text" name="intensyvios_veiklos_rusys" value="bėgimas,mankšta,važiavimas dviračiu,plaukimas">
+			 
+			<label for="val_per_sav_intensyviai"> trukmė val. per sav. intensyvios veiklos</label>
+			<input type="text" name="val_per_sav_intensyviai" value="5.0">
+			 
+			<label for="kartai_per_sav_intensyviai"> kartai per sav. intensyvios veiklos</label>
+			<input type="text" name="kartai_per_sav_intensyviai" value="5"> 
+				
+			<label for="pastabos"> pastabos</label>
+			<input type="text" name="pastabos" value="">
+			
+			<div class="skyrius">būklė po</div>			 
+				
+			<label for="kritines_ligos_po">kritines ligos</label>
+			<input type="text" name="kritines_ligos_po" value=""> 
+			
+			<label for="chroniski_negalavimai"> chroniski negalavimai</label>
+			<input type="text" name="chroniski_negalavimai_po" value="">
+			 
+			<label for="nubegamas_atstumas_per_12min_po"> nubėgamas atstumas per 12min</label> 	
+			<input type="text" name="nubegamas_atstumas_per_12min_po" value="2.5"> 
+			
+			<label for="prisitraukimai_po"> prisitraukimai</label>
+			<input type="text" name="prisitraukimai_po" value="7"> 
+				
+			<input type="submit" name="saugoti" value="saugoti">
+		</div>
 	</form>
 </body>
 </html>
