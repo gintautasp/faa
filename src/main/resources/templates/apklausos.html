@@ -5,7 +5,15 @@
 	<title>fizinio aktyvūmo stebėjimas</title>
 	<link rel="stylesheet" href="main.css">
 	<style>
-	
+		th {
+			background-color: coral;
+			border: 3px solid chocolate;
+			padding: 4px 7px;
+		}
+		a {
+			display: inline-block;
+			color: 
+		}
 	</style>
 <body>
 	<h3>Atliktų apklausų duomenys</h3>	
@@ -52,7 +60,7 @@
 			<br>
 			</th>
 			<th>
-				prisitraukimai			
+				pri-<br>si-<br>trau-<br>kimai			
 			</th>
 			<th>
 				periodas
@@ -77,16 +85,18 @@
 				<br>per
 				<br>sav.
 				<br>neintensyviai
+			</th>
 			<th>
-			<th>
-				intensyvios_veiklos_rusys
+				intensyvios
+				<br>veiklos
+				<br>rušys
 			</th>
 			<th>
 				val
 				<br>per
 				<br>sav.
 				<br>intensyviai
-			<th>
+			</th>
 			<th>
 				kartai
 				<br>per
@@ -111,12 +121,29 @@
 				<br>12min
 			</th>
 			<th>
-				prisitraukimai
+				pri-<br>si-<br>trau-<br>kimai
 			</th>
 		</tr>
 		<tr th:each="apklausa1 : ${apklausos_visos}">
 			<td th:text="${apklausa1.getLytis()}"></td>
 			<td th:text="${apklausa1.getAmzius_periodo_pabaigoje()}"></td>
+			<td th:text="${apklausa1.getKritines_ligos_pries()}"></td>
+			<td th:text="${apklausa1.getChroniski_negalavimai_pries()}"></td>
+			<td th:text="${apklausa1.getNubegamas_atstumas_per_12min_pries()}"></td>
+			<td th:text="${apklausa1.getPrisitraukimai_pries()}"></td>
+			<td th:text="${apklausa1.getPeriodas_men()}"></td>
+			<td th:text="${apklausa1.getPagr_veikla()}"></td>
+			<td th:text="${apklausa1.getNeintensyvios_veiklos_rusys()}"></td>
+			<td th:text="${apklausa1.getVal_per_sav_neintensyviai()}"></td>
+			<td th:text="${apklausa1.getKartai_per_sav_neintensyviai()}"></td>
+			<td th:text="${apklausa1.getIntensyvios_veiklos_rusys()}"></td>
+			<td th:text="${apklausa1.getVal_per_sav_intensyviai()}"></td>
+			<td th:text="${apklausa1.getKartai_per_sav_intensyviai()}"></td>
+			<td th:text="${apklausa1.getPastabos()}"></td>
+			<td th:text="${apklausa1.getKritines_ligos_po()}"></td>
+			<td th:text="${apklausa1.getChroniski_negalavimai_po()}"></td>
+			<td th:text="${apklausa1.getNubegamas_atstumas_per_12min_po()}"></td>
+			<td th:text="${apklausa1.getPrisitraukimai_po()}"></td>	
 		</tr>
 	</table>
 </body>
